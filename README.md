@@ -1,2 +1,40 @@
 # JavaYChen
 Java技术栈总结、Java实战项目推荐、Java路线指南、Java面试总结
+### JavaSE
+- Java核心基础
+- 反射
+- 集合
+- IO
+- 注解
+### JVM
+### 并发
+### 设计模式
+### 前端
+- HTML+CSS+JS
+- AJAX
+- JQuery
+- BootStrap
+- Vue.js
+- node.js
+-
+### JavaWeb
+- tomcat
+- Servlet
+- JSP
+- JDBC
+- XML and JSON
+- 过滤器和监听器
+### 数据库
+- MySQL
+- Redis
+### JavaEE框架
+- Hibernate
+- Struts
+- Mybatis
+- Spring&SpringMVC
+- SSH项目
+- SSM项目
+- SpringBoot项目
+- 个人博客项目
+### Java面试总结
+- Java面试题
