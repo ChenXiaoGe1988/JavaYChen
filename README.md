@@ -61,7 +61,7 @@
 - [Mybatis基础搭建及架构概述](https://github.com/ChenXiaoGe1988/JavaYChen/blob/main/Mybatis/Mybatis入门.md)
 - Mybatis配置文件
 - [MyBatis Configuration](https://github.com/ChenXiaoGe1988/JavaYChen/blob/main/Mybatis/Mybatis-Configuration.md)
-- Mybatis逆向工程
+- [Mybatis逆向工程](https://github.com/ChenXiaoGe1988/JavaYChen/blob/main/Mybatis/MyBatis逆向工程.md)
 - Mybatis与Spring整合
 - Mybatis面试题
 
