@@ -11,9 +11,6 @@
 - Java反射
 - Java集合
 
-#### 并发
-- Java并发基础常见面试题
-
 #### JVM
 
 - Java内存区域
@@ -28,22 +25,13 @@
 - 代理模式
 - 责任链模式
 
-## 前端
-
-- html+css+js
-- Jquery
-
 ## JavaWeb
 ### XML
 ### JSON
 ### Tomcat
 ### Servlet
-### Jsp
 ### 监听器和过滤器
 ### AJAX
-### CRM项目(Servlet+MyBatis+JSP+bootstrap+Maven)
-- 项目地址
-- crm功能实现细节记录
 
 ## MySQL
 
