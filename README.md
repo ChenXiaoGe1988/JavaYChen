@@ -59,7 +59,7 @@ Java技术栈总结、Java实战项目推荐、Java路线指南、Java面试总�
 
 - Mybatis配置文件
 
-- MyBatis Configuration
+- [MyBatis Configuration](https://github.com/ChenXiaoGe1988/JavaYChen/blob/main/Mybatis/Mybatis-Configuration.md)
 
 - Mybatis逆向工程
 
@@ -69,7 +69,7 @@ Java技术栈总结、Java实战项目推荐、Java路线指南、Java面试总�
 
 - Spring Bean
 
-- Spring AOP
+- [Spring AOP](https://github.com/ChenXiaoGe1988/JavaYChen/blob/main/Spring/SpringAOP.md)
 
 ## SpringMVC
 
