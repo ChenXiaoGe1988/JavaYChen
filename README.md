@@ -55,7 +55,7 @@ Java技术栈总结、Java实战项目推荐、Java路线指南、Java面试总�
 
 ## MyBatis
 
-- [Mybatis基础搭建](https://github.com/ChenXiaoGe1988/JavaYChen/Mybatis/Mybatis入门.md)
+- [Mybatis基础搭建](https://github.com/ChenXiaoGe1988/JavaYChen/blob/main/Mybatis/Mybatis入门.md)
 
 - Mybatis配置文件
 
