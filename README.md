@@ -1,15 +1,18 @@
-# JavaYChen
-Java技术栈总结、Java实战项目推荐、Java路线指南、Java面试总结
+# demonlover-记录了Java学习的点点滴滴
+>YChen在这里记录了Java的一些技术栈和学习笔记,部分文章来自网络,本项目力求分享技术干货,如有不严谨的地方请联系作者,
+本仓库供学习使用,商业用途请联系作者(VX:c2k6b8007)
+
 ## Java
 
 #### 基础系列
 
-- 核心基础教程
+- Java基础
 - Java代理
 - Java反射
 - Java集合
 
 #### 并发
+- Java并发基础常见面试题
 
 #### JVM
 
@@ -28,59 +31,58 @@ Java技术栈总结、Java实战项目推荐、Java路线指南、Java面试总�
 ## 前端
 
 - html+css+js
-
-- Ajax
-
 - Jquery
 
-- bootstrap
-
 ## JavaWeb
-
-- Tomcat
-
-- Servlet
-
-- Jsp
-
-- 监听器和过滤器
+### XML
+### JSON
+### Tomcat
+### Servlet
+### Jsp
+### 监听器和过滤器
+### AJAX
 
 ## MySQL
 
 - MySQL基础
-
+  - MySQL SQL使用
+  - MySQL数据类型
+  - MySQL运算符
+  - MySQL常用函数
 - MySQL开发
-
+  - MySQL存储引擎
+  - MySQL选择合适的数据类型
+  - MySQL字符集
 - SQL进阶技巧
+- MySQL魔鬼12问
 
 ## MyBatis
 
-- [Mybatis基础搭建](https://github.com/ChenXiaoGe1988/JavaYChen/blob/main/Mybatis/Mybatis入门.md)
-
+- [Mybatis基础搭建及架构概述](https://github.com/ChenXiaoGe1988/JavaYChen/blob/main/Mybatis/Mybatis入门.md)
 - Mybatis配置文件
-
 - [MyBatis Configuration](https://github.com/ChenXiaoGe1988/JavaYChen/blob/main/Mybatis/Mybatis-Configuration.md)
-
 - Mybatis逆向工程
-
 - Mybatis与Spring整合
+- Mybatis面试题
 
 ## Spring
 
 - Spring Bean
-
+- Spring的@Autowired实现细节
 - [Spring AOP](https://github.com/ChenXiaoGe1988/JavaYChen/blob/main/Spring/SpringAOP.md)
 
 ## SpringMVC
 
 - 简单入门
 - 开发Controller详解
+- SpringMVC工作原理详解
+## Redis
 
 ## SSM
 
-- SSM获取前台参数的方式
-- Spring+SpringMVC+Mybatis+JSP+Redis+Maven开发的CRM(客户关系管理)系统
-- Java高并发秒杀系统
+- SSM获取前台参数的方式总结
+- Spring+SpringMVC+Mybatis+JSP+Redis+Maven开发的CRM(客户关系管理)系统总结
+- Java高并发秒杀系统总结
 
 ## Linux
 
@@ -109,9 +111,10 @@ Java技术栈总结、Java实战项目推荐、Java路线指南、Java面试总�
 
 ## 工具
 
-- IDEA
-- Git
-- Github
+### IDEA
+  - IDEA调试技巧 
+### Git
+### Github
 
 ## 面试指南
 
@@ -119,7 +122,9 @@ Java技术栈总结、Java实战项目推荐、Java路线指南、Java面试总�
 - 如何准备面试
 
 ## 面试真题
-
+- HTTP高频面试题
+- MySQL面试题
+- Java基础面试题
 
 
 
