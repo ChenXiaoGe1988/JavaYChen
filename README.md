@@ -6,7 +6,7 @@
 
 #### 基础系列
 
-- Java基础
+- [Java基础](https://github.com/ChenXiaoGe1988/JavaYChen/blob/main/java-basic/Javabasic.md)
 - Java代理
 - Java反射
 - Java集合
