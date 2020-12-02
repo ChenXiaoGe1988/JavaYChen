@@ -273,6 +273,55 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 }
 
 ```
+### **Integer缓存池**
+#### 也就是IntegerCache,源码如下:
+```JAVA
+private static class IntegerCache {
+        static final int low = -128;
+        static final int high;
+        static final Integer cache[];
+
+        static {
+            // high value may be configured by property
+            int h = 127;
+            String integerCacheHighPropValue =
+                sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high");
+            if (integerCacheHighPropValue != null) {
+                try {
+                    int i = parseInt(integerCacheHighPropValue);
+                    i = Math.max(i, 127);
+                    // Maximum array size is Integer.MAX_VALUE
+                    h = Math.min(i, Integer.MAX_VALUE - (-low) -1);
+                } catch( NumberFormatException nfe) {
+                    // If the property cannot be parsed into an int, ignore it.
+                }
+            }
+            high = h;
+
+            cache = new Integer[(high - low) + 1];
+            int j = low;
+            for(int k = 0; k < cache.length; k++)
+                cache[k] = new Integer(j++);
+
+            // range [-128, 127] must be interned (JLS7 5.1.7)
+            assert IntegerCache.high >= 127;
+        }
+
+        private IntegerCache() {}
+    }
+    ```
+    >它的默认值用于缓存 -128 - 127 之间的数字，如果有 -128 - 127 之间的数字的话，使用 new Integer 不用创建对象，会直接从缓存池中取，此操作会减少堆中对象的分配，有利于提高程序的运行效率。
+    ##### 例如创建一个 Integer a = 100，其实是调用 Integer 的 valueOf 
+    ```JAVA
+    public static Integer valueOf(int i) {
+        if (i >= IntegerCache.low && i <= IntegerCache.high)
+            return IntegerCache.cache[i + (-IntegerCache.low)];
+        return new Integer(i);
+    }
+    ```
+    ##### 如果在指定缓存池范围内的话，会直接返回缓存的值而不用创建新的 Integer 对象。
+    ##### 缓存的大小可以使用 XX:AutoBoxCacheMax 来指定，在 VM 初始化时，java.lang.Integer.IntegerCache.high 属性会设置和保存在 sun.misc.VM 的私有系统属性中。
+    
 
 
 
