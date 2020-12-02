@@ -275,7 +275,7 @@ final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
 ```
 ### **Integer缓存池**
 #### 也就是IntegerCache,源码如下:
-```
+```JAVA
 private static class IntegerCache {
         static final int low = -128;
         static final int high;
