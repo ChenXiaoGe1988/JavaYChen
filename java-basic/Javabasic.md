@@ -207,5 +207,72 @@
 - Spring 框架的 IOC（动态加载管理 Bean）创建对象以及 AOP（动态代理）功能都和反射有联系；
 - 动态配置实例的属性；
 
+### **谈谈HashMap put 的过程**
+#### HashMap put 方法的核心就是在 putval 方法，它的插入过程如下
+- 首先会判断 HashMap 中是否是新构建的，如果是的话会首先进行 resize
+- 然后判断需要插入的元素在 HashMap 中是否已经存在（说明出现了碰撞情况），如果不存在，直接生成新的k-v 节点存放，再判断是否需要扩容。
+- 如果要插入的元素已经存在的话，说明发生了冲突，这就会转换成链表或者红黑树来解决冲突，首先判断链表中的 hash，key 是否相等，如果相等的话，就用新值替换旧值，如果节点是属于 TreeNode 类型，会直接在红黑树中进行处理，如果 hash ,key 不相等也不属于 TreeNode 类型，会直接转换为链表处理，进行链表遍历，如果链表的 next 节点是 null，判断是否转换为红黑树，如果不转换的话，在遍历过程中找到 key 完全相等的节点，则用新节点替换老节点
+
+源码如下:
+```JAVA
+final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
+                   boolean evict) {
+  Node<K,V>[] tab; Node<K,V> p; int n, i;
+  // 如果table 为null 或者没有为table分配内存，就resize一次
+  if ((tab = table) == null || (n = tab.length) == 0)
+    n = (tab = resize()).length;
+  // 指定hash值节点为空则直接插入，这个(n - 1) & hash才是表中真正的哈希
+  if ((p = tab[i = (n - 1) & hash]) == null)
+    tab[i] = newNode(hash, key, value, null);
+  // 如果不为空
+  else {
+    Node<K,V> e; K k;
+    // 计算表中的这个真正的哈希值与要插入的key.hash相比
+    if (p.hash == hash &&
+        ((k = p.key) == key || (key != null && key.equals(k))))
+      e = p;
+    // 若不同的话，并且当前节点已经在 TreeNode 上了
+    else if (p instanceof TreeNode)
+      // 采用红黑树存储方式
+      e = ((TreeNode<K,V>)p).putTreeVal(this, tab, hash, key, value);
+    // key.hash 不同并且也不再 TreeNode 上，在链表上找到 p.next==null
+    else {
+      for (int binCount = 0; ; ++binCount) {
+        if ((e = p.next) == null) {
+          // 在表尾插入
+          p.next = newNode(hash, key, value, null);
+          // 新增节点后如果节点个数到达阈值，则进入 treeifyBin() 进行再次判断
+          if (binCount >= TREEIFY_THRESHOLD - 1) // -1 for 1st
+            treeifyBin(tab, hash);
+          break;
+        }
+        // 如果找到了同hash、key的节点，那么直接退出循环
+        if (e.hash == hash &&
+            ((k = e.key) == key || (key != null && key.equals(k))))
+          break;
+        // 更新 p 指向下一节点
+        p = e;
+      }
+    }
+    // map中含有旧值，返回旧值
+    if (e != null) { // existing mapping for key
+      V oldValue = e.value;
+      if (!onlyIfAbsent || oldValue == null)
+        e.value = value;
+      afterNodeAccess(e);
+      return oldValue;
+    }
+  }
+  // map调整次数 + 1
+  ++modCount;
+  // 键值对的数量达到阈值，需要扩容
+  if (++size > threshold)
+    resize();
+  afterNodeInsertion(evict);
+  return null;
+}
+
+```
+
 
 
